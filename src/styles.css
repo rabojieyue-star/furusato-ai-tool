@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #212529;
+  background:
+    radial-gradient(circle at top, rgba(149, 213, 178, 0.35), transparent 38%),
+    linear-gradient(180deg, #f4fbf7 0%, #f8f9fa 30%, #ffffff 100%);
+  font-family:
+    "Hiragino Sans", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input[type="range"] {
+  accent-color: #2d6a4f;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 300ms ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 300ms ease-out;
+}
