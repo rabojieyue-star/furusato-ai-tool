@@ -15,6 +15,6 @@ export const getSatofullUrl = (region, product) => {
 
 export const getPockemaruUrl = (region, product) => {
   const keyword = buildKeyword(region, product);
-  const targetUrl = `https://poke-m.com/furusato/products?keyword=${keyword}`;
+  const targetUrl = `https://poke-m.com/furusato/products?words=${keyword}`;
   return `https://px.a8.net/svt/ejp?a8mat=${A8_POCKEMARU}&a8ejpredirect=${encodeURIComponent(targetUrl)}`;
 };
