@@ -133,7 +133,7 @@ export default function Step4_Result({
                 rel="noopener noreferrer sponsored"
                 className="block flex-1 rounded-xl bg-primary px-[clamp(0.875rem,3vw,1rem)] py-[clamp(0.75rem,3vw,0.875rem)] text-center text-sm font-bold text-white transition hover:bg-primary/90"
               >
-                サトふるで探す
+                さとふるで探す
               </a>
               <a
                 href={getPockemaruUrl(item.region, item.product)}
