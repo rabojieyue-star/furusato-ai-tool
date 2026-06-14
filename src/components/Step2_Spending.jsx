@@ -71,14 +71,14 @@ export default function Step2_Spending({ spending, totals, onChange, onBack, onN
         <p className="text-sm font-semibold text-primary">リアルタイム集計</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Monthly</p>
+            <p className="text-xs tracking-[0.2em] text-slate-500">月間合計</p>
             <p className="mt-1 text-2xl font-black text-slate-900">
               {formatCurrency(totals.monthly)}
               <span className="ml-1 text-sm font-medium text-slate-500">/ 月</span>
             </p>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Annual</p>
+            <p className="text-xs tracking-[0.2em] text-slate-500">年間合計</p>
             <p className="mt-1 text-2xl font-black text-slate-900">
               {formatCurrency(totals.annual)}
               <span className="ml-1 text-sm font-medium text-slate-500">/ 年</span>
