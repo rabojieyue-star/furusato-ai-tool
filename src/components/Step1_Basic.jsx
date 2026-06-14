@@ -84,7 +84,7 @@ export default function Step1_Basic({
         />
       </div>
 
-      <div className="rounded-[24px] border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-5">
+      <div className="w-full rounded-[24px] border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-[clamp(1rem,4vw,1.25rem)]">
         <p className="text-sm font-semibold text-primary">あなたの寄付上限額（概算）</p>
         <p className="mt-3 text-4xl font-black tracking-tight text-primary">
           {isReady ? formatCurrency(donationLimit) : "¥0"}
@@ -93,7 +93,7 @@ export default function Step1_Basic({
       </div>
 
       {showWarning ? (
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
+        <div className="w-full rounded-2xl border border-amber-200 bg-amber-50 px-[clamp(0.875rem,4vw,1rem)] py-[clamp(0.75rem,3vw,0.875rem)] text-sm leading-6 text-amber-900">
           申し訳ありません、入力された条件ではふるさと納税の税制優遇が適用されない可能性があります。
         </div>
       ) : null}
@@ -102,7 +102,7 @@ export default function Step1_Basic({
         type="button"
         onClick={onNext}
         disabled={!isReady}
-        className="w-full rounded-full bg-primary px-5 py-4 text-base font-bold text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:bg-slate-300"
+        className="w-full rounded-full bg-primary px-[clamp(1rem,4vw,1.25rem)] py-[clamp(0.875rem,3vw,1rem)] text-base font-bold text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:bg-slate-300"
       >
         支出入力へ進む
       </button>

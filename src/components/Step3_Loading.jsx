@@ -48,7 +48,7 @@ export default function Step3_Loading({ isLoading, error, loadingStartedAt, onRe
         </p>
       </div>
 
-      <div className="rounded-[24px] border border-slate-100 bg-slate-50 p-5">
+      <div className="w-full rounded-[24px] border border-slate-100 bg-slate-50 p-[clamp(1rem,4vw,1.25rem)]">
         <div className="flex items-center justify-between text-sm font-semibold text-slate-600">
           <span>分析の進捗</span>
           <span>{Math.round(progress)}%</span>
@@ -63,20 +63,20 @@ export default function Step3_Loading({ isLoading, error, loadingStartedAt, onRe
       </div>
 
       {!isLoading && error ? (
-        <div className="space-y-4 rounded-[24px] border border-amber-200 bg-amber-50 p-5">
+        <div className="w-full space-y-4 rounded-[24px] border border-amber-200 bg-amber-50 p-[clamp(1rem,4vw,1.25rem)]">
           <p className="text-sm leading-6 text-amber-900">{messageForError(error)}</p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
               onClick={onBack}
-              className="w-full rounded-full border border-amber-200 bg-white px-5 py-3 font-semibold text-amber-900"
+              className="w-full rounded-full border border-amber-200 bg-white px-[clamp(1rem,4vw,1.25rem)] py-[clamp(0.75rem,3vw,0.875rem)] font-semibold text-amber-900"
             >
               入力に戻る
             </button>
             <button
               type="button"
               onClick={onRetry}
-              className="w-full rounded-full bg-primary px-5 py-3 font-bold text-white"
+              className="w-full rounded-full bg-primary px-[clamp(1rem,4vw,1.25rem)] py-[clamp(0.75rem,3vw,0.875rem)] font-bold text-white"
             >
               再試行する
             </button>

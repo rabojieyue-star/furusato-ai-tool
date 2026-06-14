@@ -6,7 +6,7 @@ export default function LineCTA() {
   const lineUrl = import.meta.env.VITE_LINE_URL || DEFAULT_LINE_URL;
 
   return (
-    <section className="rounded-[28px] border border-green-200 bg-green-50 p-6 text-center shadow-sm">
+    <section className="w-full rounded-[28px] border border-green-200 bg-green-50 p-[clamp(1rem,4vw,1.5rem)] text-center shadow-sm">
       <p className="text-lg font-bold text-slate-800">この最適プランをLINEで保存する</p>
       <p className="mt-2 text-sm leading-6 text-slate-500">
         毎年の寄付タイミングや新着返礼品のお知らせをLINEで受け取れます。
@@ -16,7 +16,7 @@ export default function LineCTA() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackEvent("line_cta_click")}
-        className="mt-5 inline-flex rounded-full bg-green-500 px-8 py-3 text-base font-bold text-white transition-colors hover:bg-green-600"
+        className="mt-5 inline-flex w-full justify-center rounded-full bg-green-500 px-[clamp(1rem,4vw,2rem)] py-[clamp(0.75rem,3vw,0.875rem)] text-base font-bold text-white transition-colors hover:bg-green-600 sm:w-auto"
       >
         LINEで友達追加する（無料）
       </a>

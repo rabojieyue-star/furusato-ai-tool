@@ -36,9 +36,14 @@ export default function Step2_Spending({ spending, totals, onChange, onBack, onN
 
       <div className="space-y-4">
         {CATEGORY_CONFIG.map((category) => (
-          <div key={category.key} className="rounded-[24px] border border-slate-100 bg-slate-50/70 p-4">
-            <div className="flex items-start justify-between gap-4">
-              <label className="text-sm font-semibold leading-6 text-slate-700">{category.label}</label>
+          <div
+            key={category.key}
+            className="w-full rounded-[24px] border border-slate-100 bg-slate-50/70 p-[clamp(1rem,4vw,1.125rem)]"
+          >
+            <div className="flex w-full flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+              <label className="w-full min-w-0 text-sm font-semibold leading-6 text-slate-700">
+                {category.label}
+              </label>
               <input
                 type="number"
                 min="0"
@@ -46,7 +51,7 @@ export default function Step2_Spending({ spending, totals, onChange, onBack, onN
                 step="1000"
                 value={spending[category.key]}
                 onChange={(event) => handleValueChange(category.key, event.target.value)}
-                className="w-28 rounded-xl border border-slate-200 bg-white px-3 py-2 text-right font-semibold text-slate-900 outline-none focus:border-primary"
+                className="w-full rounded-xl border border-slate-200 bg-white px-[clamp(0.75rem,3vw,0.875rem)] py-[clamp(0.625rem,2.5vw,0.75rem)] text-right font-semibold text-slate-900 outline-none focus:border-primary sm:max-w-[8rem]"
               />
             </div>
             <input
@@ -62,7 +67,7 @@ export default function Step2_Spending({ spending, totals, onChange, onBack, onN
         ))}
       </div>
 
-      <div className="rounded-[24px] border border-primary/10 bg-primary/5 p-5">
+      <div className="w-full rounded-[24px] border border-primary/10 bg-primary/5 p-[clamp(1rem,4vw,1.25rem)]">
         <p className="text-sm font-semibold text-primary">リアルタイム集計</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <div>
@@ -86,14 +91,14 @@ export default function Step2_Spending({ spending, totals, onChange, onBack, onN
         <button
           type="button"
           onClick={onBack}
-          className="w-full rounded-full border border-slate-200 bg-white px-5 py-3 font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+          className="w-full rounded-full border border-slate-200 bg-white px-[clamp(1rem,4vw,1.25rem)] py-[clamp(0.75rem,3vw,0.875rem)] font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
         >
           戻る
         </button>
         <button
           type="button"
           onClick={onNext}
-          className="w-full rounded-full bg-primary px-5 py-3 font-bold text-white transition hover:bg-primary/90"
+          className="w-full rounded-full bg-primary px-[clamp(1rem,4vw,1.25rem)] py-[clamp(0.75rem,3vw,0.875rem)] font-bold text-white transition hover:bg-primary/90"
         >
           AIで最適化する
         </button>

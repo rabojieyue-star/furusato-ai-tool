@@ -216,9 +216,9 @@ export default function App() {
   };
 
   return (
-    <main className="min-h-screen px-4 py-6 text-ink sm:px-6">
-      <div className="mx-auto max-w-[680px]">
-        <section className="mb-5 overflow-hidden rounded-[28px] border border-white/70 bg-white/90 p-5 shadow-card backdrop-blur sm:p-7">
+    <main className="min-h-screen w-full box-border px-[clamp(0.875rem,4vw,1.5rem)] py-[clamp(1rem,4vw,1.5rem)] text-ink">
+      <div className="mx-auto w-full max-w-[680px] box-border">
+        <section className="mb-5 w-full overflow-hidden rounded-[28px] border border-white/70 bg-white/90 p-[clamp(1rem,4vw,1.75rem)] shadow-card backdrop-blur">
           <div className="mb-5">
             <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-primary">
               SETSUYAKU LAB

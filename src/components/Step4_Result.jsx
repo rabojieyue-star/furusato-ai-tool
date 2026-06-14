@@ -49,12 +49,12 @@ export default function Step4_Result({
   return (
     <div className="space-y-5">
       {fallbackError ? (
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
+        <div className="w-full rounded-2xl border border-amber-200 bg-amber-50 px-[clamp(0.875rem,4vw,1rem)] py-[clamp(0.75rem,3vw,0.875rem)] text-sm leading-6 text-amber-900">
           AIとの通信が不安定だったため、現在は入力内容から組み立てた暫定プランを表示しています。
         </div>
       ) : null}
 
-      <section className="overflow-hidden rounded-[28px] bg-primary p-6 text-white shadow-card">
+      <section className="w-full overflow-hidden rounded-[28px] bg-primary p-[clamp(1rem,4vw,1.5rem)] text-white shadow-card">
         <p className="text-sm font-semibold text-white/80">あなたの実質年間節約額</p>
         <p className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
           <CountUp value={recommendation.effective_annual_savings ?? 0} />
@@ -79,13 +79,13 @@ export default function Step4_Result({
         </div>
       </section>
 
-      <section className="space-y-4">
-        <div className="flex items-end justify-between gap-4">
-          <div>
+      <section className="w-full space-y-4">
+        <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+          <div className="min-w-0">
             <h2 className="text-xl font-bold text-slate-900">推奨ポートフォリオ</h2>
             <p className="mt-1 text-sm text-slate-600">{recommendation.summary_message}</p>
           </div>
-          <div className="text-right text-sm text-slate-500">
+          <div className="text-left text-sm text-slate-500 sm:text-right">
             <p>月あたり削減目安</p>
             <p className="text-lg font-bold text-primary">
               {formatCurrency(recommendation.monthly_food_cost_reduction ?? 0)}
@@ -96,7 +96,7 @@ export default function Step4_Result({
         {recommendation.portfolio?.map((item) => (
           <article
             key={`${item.category}-${item.product}`}
-            className="rounded-[24px] border border-slate-100 bg-white p-5 shadow-sm"
+            className="w-full rounded-[24px] border border-slate-100 bg-white p-[clamp(1rem,4vw,1.25rem)] shadow-sm"
           >
             <span
               className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${
@@ -128,9 +128,9 @@ export default function Step4_Result({
         ))}
       </section>
 
-      <section className="rounded-[24px] border border-slate-100 bg-white p-5">
-        <div className="flex items-center justify-between gap-4 text-sm font-semibold text-slate-700">
-          <span>
+      <section className="w-full rounded-[24px] border border-slate-100 bg-white p-[clamp(1rem,4vw,1.25rem)]">
+        <div className="flex w-full flex-col gap-2 text-sm font-semibold text-slate-700 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <span className="min-w-0 break-words">
             寄付総額：{formatCurrency(totalDonation)} ／ 上限：{formatCurrency(donationLimit)}
           </span>
           <span>使用率 {formatNumber(usageRate)}%</span>
@@ -150,7 +150,7 @@ export default function Step4_Result({
       <button
         type="button"
         onClick={onRestart}
-        className="w-full rounded-full border border-slate-200 bg-white px-5 py-3 font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+        className="w-full rounded-full border border-slate-200 bg-white px-[clamp(1rem,4vw,1.25rem)] py-[clamp(0.75rem,3vw,0.875rem)] font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
       >
         もう一度診断する
       </button>

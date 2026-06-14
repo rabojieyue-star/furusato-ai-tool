@@ -16,11 +16,11 @@ body,
 #root {
   max-width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
   min-height: 100vh;
 }
 
@@ -30,8 +30,16 @@ body {
 
 input,
 select,
-button {
+button,
+textarea {
   font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
 }
 
 input[type="range"] {
