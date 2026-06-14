@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPockemaruUrl, getSatofullUrl } from "../utils/affiliateLinks";
+import { getSatofullUrl } from "../utils/affiliateLinks";
 import { formatCurrency, formatNumber } from "../utils/formatters";
 
 const CATEGORY_BADGE_STYLES = {
@@ -126,22 +126,14 @@ export default function Step4_Result({
 
             <p className="mt-4 text-sm leading-6 text-slate-600">{item.coverage_description}</p>
 
-            <div className="mt-3 flex w-full flex-col gap-2 sm:flex-row">
+            <div className="mt-3 w-full">
               <a
                 href={getSatofullUrl(item.region, item.product)}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="block flex-1 rounded-xl bg-primary px-[clamp(0.875rem,3vw,1rem)] py-[clamp(0.75rem,3vw,0.875rem)] text-center text-sm font-bold text-white transition hover:bg-primary/90"
+                className="block w-full rounded-xl bg-primary px-[clamp(0.875rem,3vw,1rem)] py-[clamp(0.75rem,3vw,0.875rem)] text-center text-sm font-bold text-white transition hover:bg-primary/90"
               >
                 さとふるで探す
-              </a>
-              <a
-                href={getPockemaruUrl(item.region, item.product)}
-                target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="block flex-1 rounded-xl border border-primary/20 bg-primary/5 px-[clamp(0.875rem,3vw,1rem)] py-[clamp(0.75rem,3vw,0.875rem)] text-center text-sm font-bold text-primary transition hover:bg-primary/10"
-              >
-                ポケマルで探す
               </a>
             </div>
           </article>
