@@ -120,7 +120,13 @@ export default function App() {
       const root = document.getElementById("root");
       if (!root) return;
       const height = root.offsetHeight;
-      window.parent.postMessage({ iframeHeight: height }, "*");
+      window.parent.postMessage(
+        {
+          iframeHeight: height,
+          scrollToTop: true,
+        },
+        "*",
+      );
     };
 
     const timer = setTimeout(sendHeight, 300);
