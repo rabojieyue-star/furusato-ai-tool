@@ -115,6 +115,20 @@ export default function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const sendHeight = () => {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ iframeHeight: height }, "*");
+    };
+
+    sendHeight();
+
+    const observer = new ResizeObserver(sendHeight);
+    observer.observe(document.body);
+
+    return () => observer.disconnect();
+  }, []);
+
   const moveToStep = (nextStep) => {
     setDirection(nextStep > step ? 1 : -1);
     setStep(nextStep);
