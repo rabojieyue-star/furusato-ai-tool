@@ -15,13 +15,31 @@ const INCOME_OPTIONS = [
 ];
 
 const HOUSEHOLD_OPTIONS = [
-  "独身",
-  "共働き夫婦（子なし）",
-  "片働き夫婦（子なし）",
-  "共働き夫婦（子1人）",
-  "共働き夫婦（子2人）",
-  "片働き夫婦（子2人）",
-  "共働き夫婦（子3人）",
+  {
+    label: "夫婦世帯",
+    options: [
+      { value: "共働き夫婦（子なし）", label: "共働き夫婦（子なし）" },
+      { value: "共働き夫婦（子1人）", label: "共働き夫婦（子1人）" },
+      { value: "共働き夫婦（子2人）", label: "共働き夫婦（子2人）" },
+      { value: "共働き夫婦（子3人）", label: "共働き夫婦（子3人以上）" },
+      { value: "片働き夫婦（子なし）", label: "片働き夫婦（子なし）" },
+      { value: "片働き夫婦（子1人）", label: "片働き夫婦（子1人）" },
+      { value: "片働き夫婦（子2人）", label: "片働き夫婦（子2人）" },
+      { value: "片働き夫婦（子3人以上）", label: "片働き夫婦（子3人以上）" },
+    ],
+  },
+  {
+    label: "ひとり親世帯",
+    options: [
+      { value: "ひとり親（子1人）", label: "ひとり親（子1人）※父子・母子家庭" },
+      { value: "ひとり親（子2人）", label: "ひとり親（子2人）※父子・母子家庭" },
+      { value: "ひとり親（子3人以上）", label: "ひとり親（子3人以上）※父子・母子家庭" },
+    ],
+  },
+  {
+    label: "単身",
+    options: [{ value: "独身", label: "独身" }],
+  },
 ];
 
 function SelectField({ label, value, onChange, options, placeholder }) {
@@ -34,8 +52,20 @@ function SelectField({ label, value, onChange, options, placeholder }) {
         className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-base outline-none transition focus:border-primary focus:bg-white"
       >
         <option value="">{placeholder}</option>
-        {options.map((option) => {
-          const normalized = typeof option === "string" ? { value: option, label: option } : option;
+        {options.map((group) => {
+          if (group.options) {
+            return (
+              <optgroup key={group.label} label={group.label}>
+                {group.options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </optgroup>
+            );
+          }
+
+          const normalized = typeof group === "string" ? { value: group, label: group } : group;
           return (
             <option key={normalized.value} value={normalized.value}>
               {normalized.label}
